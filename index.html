@@ -3,15 +3,24 @@
 <html>
 	<head>
 		<title>Cat GIFs</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	</head>
 
 	<body>
-		<div id="buttons"></div>
-			<form id="addButtons">
-    			<label for="user-input">Add some cats right meow</label>
-    			<input type="text" id="user-input"><br>
-    			<input id="addCats" type="submit" value="Submit">
-  			</form>
+		<h1>Cat GIFs</h1>
+		<div class="row">
+			<div id="buttons" class="col-md-7"></div>
+			<div class="col-md-5">
+				<form id="addButtons">
+	    			<label for="user-input">Add some cats right meow</label>
+	    			<input type="text" id="user-input"><br>
+	    			<input id="addCats" type="submit" value="Submit" class="btn btn-default">
+	  			</form>
+  			</div>
+  		</div>
+  			
   		<div id="cats"></div>
 
   		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

@@ -12,7 +12,7 @@ function addCats() {
 	$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 		for (i=0;i<10;i++) {
 			cats.push(response.data[i]);
-			$('#cats').append("<div><img class='cat' data-val='"+i+"' data-img='still' src='" + response.data[i].images.original_still.url + "'></div>");
+			$('#cats').append("<div class='catImage'><p>Rating: " + response.data[i].rating + "</p><img class='cat' data-val='"+i+"' data-img='still' src='" + response.data[i].images.fixed_height_still.url + "'>");
 		}
 	});
 
@@ -23,7 +23,7 @@ function renderButtons() {
 	$('#buttons').empty();
 
 	for (var i=0;i<adjectives.length;i++) {
-		var button = $("<button class='catButton' data-name='" + adjectives[i] + "'>" + adjectives[i]+ "</button>");
+		var button = $("<button class='catButton btn btn-default' data-name='" + adjectives[i] + "'>" + adjectives[i]+ "</button>");
 		$('#buttons').append(button);
 	}
 }
@@ -62,11 +62,11 @@ $(document).on('click', '.cat', function() {
 	var imgTypeClicked = $(this).attr('data-img');
 
 	if (imgTypeClicked == 'still') {
-		$(this).attr('src', cats[catClicked].images.original.url);
+		$(this).attr('src', cats[catClicked].images.fixed_height.url);
 		$(this).attr('data-img', 'gif');
 	}
 	else if (imgTypeClicked == 'gif') {
-		$(this).attr('src', cats[catClicked].images.original_still.url);
+		$(this).attr('src', cats[catClicked].images.fixed_height_still.url);
 		$(this).attr('data-img', 'still');
 	}
 });

@@ -1,0 +1,31 @@
+body {
+	padding: 10px;
+}
+
+p {
+	margin-bottom: 5px;
+}
+
+h1 {
+	margin-top: 0px;
+}
+
+.catImage {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	margin: 20px;
+}
+
+.catButton {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+#buttons {
+	margin-bottom: 20px;
+}
+
+#cats {
+	margin-left: 50px;
+}
