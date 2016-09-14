@@ -12,7 +12,12 @@ function addCats() {
 	$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 		for (i=0;i<10;i++) {
 			cats.push(response.data[i]);
-			$('#cats').append("<div class='catImage'><p>Rating: " + response.data[i].rating + "</p><img class='cat' data-val='"+i+"' data-img='still' src='" + response.data[i].images.fixed_height_still.url + "'>");
+			if (response.data[i].rating != "") {
+				$('#cats').append("<div class='catImage'><p>Rating: " + response.data[i].rating + "</p><img class='cat' data-val='"+i+"' data-img='still' src='" + response.data[i].images.fixed_height_still.url + "'>");
+			}
+			else {
+				$('#cats').append("<div class='catImage'><p>Rating: N/A</p><img class='cat' data-val='"+i+"' data-img='still' src='" + response.data[i].images.fixed_height_still.url + "'>");
+			}
 		}
 	});
 
